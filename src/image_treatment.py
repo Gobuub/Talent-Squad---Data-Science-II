@@ -34,10 +34,6 @@ from keras import backend as K
 
 class DataTransformation():
     
-    '''def __init__(self):
-        
-        return None'''
-    
     def augment_data(path:str,datagen, target: str, rang: int, augm: int)->None:
         '''
             This function receives a data generator and target and returns
@@ -140,7 +136,7 @@ class DataTransformation():
 
             X_train, X_test, y_train, y_test = train_test_split(X,Y, test_size = .2, random_state=42, stratify=Y)
 
-            if neural_network == True:
+            if neural_network == True: #if we want to train a neural network need to transform or target columns to categories
                 
                 Y_train = np_utils.to_categorical(y_train,len(classes))
                 
